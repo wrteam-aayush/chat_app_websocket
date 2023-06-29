@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_socket_app/screens/LoginScreen.dart';
+import 'package:my_socket_app/utils/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Chatting Aplication',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFfee6fb)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Constants.scaffoldBackgroundColor),
         useMaterial3: true,
       ),
       home: const LoginScreen(),

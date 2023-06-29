@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:my_socket_app/utils/constants.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
@@ -22,7 +23,8 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
 
-    _channel = IOWebSocketChannel.connect('ws://192.168.0.122:3000');
+    _channel = IOWebSocketChannel.connect(
+        'ws://${Constants.serverComputerIpAddress}:3000');
     _channel.stream.listen((message) {
       setState(() {
         _messages.add(message);
@@ -61,7 +63,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFfee6fb),
+      backgroundColor: Constants.scaffoldBackgroundColor,
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Chat'),
@@ -80,7 +82,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           : Alignment.centerLeft,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 207, 96, 74),
+                      color: Constants.chatBoxColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     padding: const EdgeInsets.all(10),

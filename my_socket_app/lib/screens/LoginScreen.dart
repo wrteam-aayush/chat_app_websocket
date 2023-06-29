@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_socket_app/screens/GroupChatScreen.dart';
+import 'package:my_socket_app/utils/constants.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -20,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFfee6fb),
+      backgroundColor: Constants.scaffoldBackgroundColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
